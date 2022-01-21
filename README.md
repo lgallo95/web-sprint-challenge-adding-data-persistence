@@ -10,8 +10,8 @@ You are not allowed to collaborate during the sprint challenge.
 
 ## Project Set Up
 
-- [ ] Run `npm install` to install your dependencies.
-- [ ] Run tests locally executing `npm test`.
+<!-- - [x] Run `npm install` to install your dependencies.
+- [x] Run tests locally executing `npm test`. -->
 
 ## Project Instructions
 
@@ -21,9 +21,9 @@ In this project you will be given a set of requirements and must design a databa
 
 ### Files to Complete
 
-1. `package.json`
-2. `index.js`
-3. `api/server.js`
+<!-- 1. `package.json` -->
+<!-- 2. `index.js` -->
+<!-- 3. `api/server.js` -->
 4. `model.js` inside `api/project`, `api/resource` and `api/task`
 5. `router.js` inside `api/project`, `api/resource` and `api/task`
 6. migration file(s)
@@ -31,38 +31,38 @@ In this project you will be given a set of requirements and must design a databa
 
 ### Required Dependencies
 
-The project needs some additional NPM dependencies in order to work.
+<!-- The project needs some additional NPM dependencies in order to work. -->
 
 ### Required Scripts
 
-Add `"start"`. `"server"`, `"migrate"` and `"rollback"` scripts to the `package.json` file. The tests depend on these scripts being correct!
+<!-- Add `"start"`. `"server"`, `"migrate"` and `"rollback"` scripts to the `package.json` file. The tests depend on these scripts being correct! -->
 
 ### Required Tables
 
 Build the migration(s) in Knex inside the `data/migrations` folder using appropriate data types and constraints. **You must use the table names and the column names described below.** To give a primary key a name different than `id`, do `table.increments("project_id")` instead of `table.increments()`.
+<!-- 
+- [x] A **project** is what needs to be done and is stored in a `projects` table with the following columns:
 
-- [ ] A **project** is what needs to be done and is stored in a `projects` table with the following columns:
+  - [x] `project_id` - primary key
+  - [x] `project_name` - required
+  - [x] `project_description` - optional
+  - [x] `project_completed` - the database defaults it to `false` (integer 0) if not provided -->
+<!-- 
+- [x] A **resource** is anything needed to complete a project and is stored in a `resources` table with the following columns:
 
-  - [ ] `project_id` - primary key
-  - [ ] `project_name` - required
-  - [ ] `project_description` - optional
-  - [ ] `project_completed` - the database defaults it to `false` (integer 0) if not provided
+  - [x] `resource_id` - primary key
+  - [x] `resource_name` - required and unique
+  - [x] `resource_description` - optional -->
+<!-- 
+- [x] A **task** is one of the steps needed to complete a project and is stored in a `tasks` table with the following columns:
 
-- [ ] A **resource** is anything needed to complete a project and is stored in a `resources` table with the following columns:
-
-  - [ ] `resource_id` - primary key
-  - [ ] `resource_name` - required and unique
-  - [ ] `resource_description` - optional
-
-- [ ] A **task** is one of the steps needed to complete a project and is stored in a `tasks` table with the following columns:
-
-  - [ ] `task_id` - primary key
-  - [ ] `task_description` - required
-  - [ ] `task_notes` - optional
-  - [ ] `task_completed` - the database defaults it to `false` (integer 0) if not provided
-  - [ ] `project_id` - required and points to an actual `project_id` in the `projects` table
-
-- [ ] A **resource assignment** connects a resource and a project, and is stored in a `project_resources` table. You decide what columns to use.
+  - [x] `task_id` - primary key
+  - [x] `task_description` - required
+  - [x] `task_notes` - optional
+  - [x] `task_completed` - the database defaults it to `false` (integer 0) if not provided
+  - [x] `project_id` - required and points to an actual `project_id` in the `projects` table -->
+<!-- 
+- [x] A **resource assignment** connects a resource and a project, and is stored in a `project_resources` table. You decide what columns to use. -->
 
 ### Required Endpoints
 
@@ -111,6 +111,20 @@ Build an API inside the `api` folder with endpoints for:
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain the difference between Relational Databases and SQL.
+
+In relational databases, the data is stored in tabular format grouped into rows and columns (similar to spreadsheets). A collection of rows is called a table. Each row represents a single record in the table and is made up of one or more columns.
+
+SQL is a standard language, which means that it will certainly be supported, no matter how your database is managed. That said, be aware that the SQL language can vary depending on database management tools. This lesson focuses on a set of core commands that never change. Learning the standard commands is an excellent introduction since the knowledge transfers between database products.
+
+
 2. Why do tables need a Primary Key?
+
+Each database table needs a primary key because it ensures row-level accessibility.
+
 3. What is the name given to a table column that references the Primary Key on another table?
+
+Foreign key
+
 4. What do we need in order to have a _many to many_ relationship between two tables?
+
+third table in between both tables. 
