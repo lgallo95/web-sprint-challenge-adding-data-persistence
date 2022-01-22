@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
       const source = await Resources.createResource(req.body)
       res.status(200).json(source)
     } catch (error) {
-      res.status(404).json({ message: 'It broke' });
+      res.status(404).json({ message: error.message });
     }
   })
 
